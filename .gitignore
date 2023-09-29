@@ -6,3 +6,7 @@
 /AzureRedis/AzureRedisSample/.vs/AzureRedisSample
 /AzureRedis/AzureRedisSample/bin/Debug/net6.0
 /AzureRedis/AzureRedisSample/obj
+/AzureRedis/AzureRedisSample/.vs/ProjectEvaluation
+/AzureRedis/AzureRedisSample/bin
+/AzureRedis/AzureRedisSample/Properties/PublishProfiles
+/AzureRedis/AzureRedisSample/Properties/ServiceDependencies/ftpdeploytest - Web Deploy/profile.arm.json

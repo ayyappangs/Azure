@@ -13,8 +13,8 @@ namespace AzureRedisSample.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+        };
 
         private readonly ILogger<WeatherForecastController> _logger;
         private readonly IConfiguration config;
@@ -25,7 +25,7 @@ namespace AzureRedisSample.Controllers
             this.config = config;
         }
 
-       
+
 
         [HttpPost(Name = "SaveToRedis")]
         public async Task SaveToRedis()
@@ -43,22 +43,22 @@ namespace AzureRedisSample.Controllers
            .ToArray();
                 var result = config.GetValue<string>("RedisConnectionString");
                 ConnectionMultiplexer connectionMultiplexer = await ConnectionMultiplexer.ConnectAsync(result);
-                            
+
 
                 var redisDb = connectionMultiplexer.GetDatabase();
                 var isSet = redisDb.StringSet("Weather", JsonConvert.SerializeObject(lists));
 
-                
+
             }
-            catch (Exception ex )
+            catch (Exception ex)
             {
 
                 throw;
             }
-           
+
         }
     }
 
-   
+
 
 }
